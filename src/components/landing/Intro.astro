@@ -1,9 +1,10 @@
 ---
 import { otherprojects } from "../../data/otherprojects.json";
+import data from "../../data/current_track.json" assert { type: "json" };
 ---
-
 <section class="bg-primary">
-  <div class="px-8 2xl:max-w-7xl py-6">
+  <div class="px-8 2xl:max-w-7xl mx-auto py-6">
+    <div class="mt-6 space-y-2">
     <div>
       <h3
       class="text-secondary text-base font-medium"
@@ -15,33 +16,53 @@ import { otherprojects } from "../../data/otherprojects.json";
     </h3>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-3 text-secondary mx-auto my-auto gap-6">
-      <img class=" my-auto mx-auto border-4 border-secondary rounded-full lg:row-start-2 h-64 w-auto lg:col-start-" src="https://w7.pngwing.com/pngs/606/795/png-transparent-george-clooney-film-producer-actor-film-producer-george-clooney-celebrities-necktie-recruiter.png"
+      <img class=" my-auto mx-auto border-4 border-secondary rounded-full h-64 w-auto" src="https://img.freepik.com/premium-photo/create-high-res-headshot-whitish-complexion-man-with-slightly-grown-beard_693425-24132.jpg?w=360"
       data-aos="fade-up"
       data-aos-duration="2000"
       />
+      <div class="grid grid-cols-2 lg:col-start-1 justify-self-center"
+      data-aos="fade-up"
+      data-aos-duration="2000">
+      <p>
+         <span class="font-bold">{data.item.name}</span>
+        {data.item.artists.map( artist => (
+          <br></br>
+          <span class="font-semi-bold">{artist.name}</span>
+        ))}
+      </p>
+        
+        <img class="col-start-2  h-36 w-36"src={data.item.album.images[1].url}>
+      </div>
+      
       <p
         class="text-base lg:col-start-2 lg:row-start-2  leading-relaxed"
         data-aos="fade-up"
         data-aos-duration="2000"
       >
-        I'm a self-taught front-end designer and developer who enjoys creating
+        I'm a self-taught full stack engineer with Big Data Experience. I love 
+        bringing ideas to life with code and owning products end to end. 
+        
+        I have worked across start ups and larger organizations. I love developing solutions that push towards and greater good
+        especially projects in the emerging Green Tech Space
+
+        <!-- I'm a self-taught front-end designer and developer who enjoys creating
         modern designs with Tailwind CSS. I have customers worldwide and have
         had successful projects. Recently, two of my projects were acquired, and
         I'm currently working on Lexington Themes. I also curate Colors &amp;
-        Fonts and create VS Code Themes. 
+        Fonts and create VS Code Themes.  -->
       </p>
       <p
-        class="text-base lg:col-start-2 lg:row-start-3 leading-relaxed underline underline-offset-4"
+        class="text-base lg:col-start-2 lg:row-start-3 leading-relaxed "
         data-aos="fade-up"
         data-aos-duration="2500"
       >
-        I am currently available for Enquires. If you need a landing page or
-        redesign something that you already have, do not hesitate to get in
-        contact. <a href="mailto:michael@andreuzza.com">michael@andreuzza.com</a
-        >
+        I am currently available for Enquires. If you need a landing page, data pipeline
+        or just want to ideate on new products, do not hesitate to get in
+        contact.
       </p>
+      <p class="text-base underline underline-offset-4 lg:row-start-4 lg:col-start-2"><a href="mailto:henry.maher99@gmail.com">Email me here!</a></p>
       <p
-        class="text-base lg:col-start-3 lg:row-start-2 leading-relaxed"
+        class="text-base un lg:col-start-3 lg:row-start-2 leading-relaxed"
         data-aos="fade-up"
         data-aos-duration="2500"
       >
@@ -61,5 +82,6 @@ import { otherprojects } from "../../data/otherprojects.json";
       </p>
     </div>
   </div>
-
+  </div>
+</section>
 </section>

@@ -1,56 +1,114 @@
 ---
-// Define testimonials/opinions data
-const humanOpinions = [
-  {
-    name: "Amrit Nagi",
-    role: "Founder of Tailwind Toolbox",
-    opinion:
-      "I've been following Mike's career for a while now and it's amazing just how quickly the quality and variety of his work has developed and evolved! He's always learning or working on something new and constantly refining his work to be the best! His attention to detail, 'can do' attitude and work ethic is refreshing and he will definitely help you succeed!",
-  },
-  {
-    name: "Gabriel Perales",
-    role: "Software Engineer at Cabify",
-    opinion:
-      "Mike has helped me with many designs, and I couldn't follow his working speed when we worked together. His designs are slick, and he delivers a lot of value; he is constantly iterating his designs and making improvements.",
-  },
-  {
-    name: "Volkan Kaya",
-    role: "Founder of Versoly.com",
-    opinion:
-      "Mike is a rare breed of designer & developer that understands business needs. He leveraged his previous experience to build out a few landing pages very quickly for Versoly.",
-  },
-  {
-    name: "Mike",
-    role: "Blogger at Raspada",
-    opinion:
-      "I have had the absolute pleasure of working with Mike in the past when building my blog Raspada with its Backend UI or to building a private application for a leading hearing care company. Mike’s knowledge and attention to detail is second to none, and he really understands and listens to his clients (me).",
-  },
-];
----
+// Define type for human opinions
+const pythonDescription: string  = `
+Sign up
+You said:hey can you write me some boiler plate description of work experience with python 
+ChatGPT said:
+ChatGPTSure! Here’s a boilerplate description you can use for work experience with Python:
+Python Developer
 
+[Company Name] – [Location]
+[Start Date] – [End Date]
+
+Developed and maintained scalable web applications using Python frameworks such as Django and Flask.
+Implemented RESTful APIs to facilitate communication between front-end and back-end systems.
+Collaborated with cross-functional teams to design, develop, and deploy data-driven solutions.
+Wrote reusable, testable, and efficient code, ensuring high performance and responsiveness of applications.
+Conducted code reviews and provided mentorship to junior developers to enhance coding standards and practices.
+Integrated third-party libraries and APIs to extend application functionality and improve user experience.
+Optimized database queries and improved application performance through data modeling and indexing strategies.
+Utilized version control systems (e.g., Git) for efficient collaboration and code management.
+`
+
+enum skillLevel {
+  BEGINNER = 1,
+  INTERMEDIATE = 2,
+  ADVANCED = 3,
+  EXPERT = 4, 
+}
+type Skill = {
+  name: string;
+  level: skillLevel;
+  description: string;
+  style?: string;
+}
+
+// Define testimonials/opinions data
+const baseSkills: Skill[] = [
+  {
+    name: "Python",
+    level: skillLevel.EXPERT,
+    description: pythonDescription,
+  },
+  {
+    name: "SQL",
+    level: skillLevel.EXPERT,
+    description: "Fast, scalable, and easy to use.",
+  },
+  {
+    name: "Javascript + Typescript",
+    level: skillLevel.ADVANCED,
+    description: "Highly typed, and powerful.",
+  },
+  {
+    name: "Google Cloud Platform",
+    level: skillLevel.ADVANCED,
+    description: "Highly typed, and powerful.",
+
+  },
+  {
+    name: "AWS",
+    level: skillLevel.INTERMEDIATE,
+    description: "Highly typed, and powerful.",
+  },
+  {
+    name: "React",
+    level: skillLevel.INTERMEDIATE,
+    description: "Highly typed, and powerful.",
+  },
+]
+
+const skills : Skill[] = baseSkills.map((skill) => {
+  return {
+    name: skill.name,
+    level: skill.level,
+    description: skill.description,
+    style: `col-span-${skill.level}  bg-secondary rounded-full h-4`,
+  }
+})
+---
 <section class="bg-primary">
   <div class="px-8 2xl:max-w-7xl mx-auto py-6">
     <div class="mt-6 space-y-2">
       <div class="h-0.5 bg-secondary"></div>
       <h3 class="text-secondary text-base font-medium">
-        <span>human</span>
-        <span class="font-bold">opinions</span>
+        <span>Technologies</span>
+        <span class="font-bold"> / Skills</span>
       </h3>
       <div class="h-1.5 bg-secondary"></div>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-4 text-secondary gap-6 pt-2 mt-2">
+    
+    <div class="grid flex overflow-scroll grid-cols-1 text-secondary gap-6 pt-2 mt-2">
       {
-        humanOpinions.map((opinion) => (
-         <div>
-            <p class="italic text-2xl block font-bold">
-              {opinion.name} {opinion.role}
+        skills.map((skill) => (
+          <div class={`group hover:border-b-2 hover:border-t-2 hover:border-secondary `} data-aos="fade-up" data-aos-duration="2000">
+            <p class=" italic text-2xl block font-bold">
+              {skill.name}
             </p>
-            <p class="text-sm leading-relaxed mt-6">
-              {opinion.opinion}
-            </p>
+            <div class="grid grid-cols-4">
+                <div class=" grid grid-cols-4 col-span-2">
+                  <span class={skill.style}></span>
+                </div>                  
+                <div class=" lg:col-span-4 text-left absolute group-hover:relative transition duration-500 group-hover:ease-in opacity-0 group-hover:opacity-100 opacity-0 ">              
+                  <p>{skill.description}</p>
+                  <p> years of exerience </p>
+                  <p> level {skill.level} </p>
+                </div>
+            </div>
          </div>
         ))
       }
+      </div>
     </div>
   </div>
 </section>
