@@ -83,7 +83,7 @@ const skills : Skill[] = baseSkills.map((skill) => {
     <div class="grid flex overflow-scroll grid-cols-1 text-secondary gap-6 pt-2 mt-2">
       {
         skills.sort((a,b) =>  b.level - a.level).map((skill) => (
-          <div class={`group hover:border-b-2 hover:border-t-2 hover:border-secondary `} data-aos="fade-up" data-aos-duration="2000">
+          <div class={`group hover:border-b-2 hover:border-t-2 hover:border-secondary p-6 `} data-aos="fade-up" data-aos-duration="2000">
             <p class=" italic text-2xl block font-bold">
               {skill.name}
             </p>
