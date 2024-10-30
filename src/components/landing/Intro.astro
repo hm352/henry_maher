@@ -16,7 +16,7 @@ import data from "../../data/current_track.json" assert { type: "json" };
     </h3>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-3 text-secondary mx-auto my-auto gap-6">
-      <img class=" my-auto mx-auto border-4 border-secondary rounded-full h-64 w-auto" src="https://img.freepik.com/premium-photo/create-high-res-headshot-whitish-complexion-man-with-slightly-grown-beard_693425-24132.jpg?w=360"
+      <img class="lg:col-start-2 my-auto mx-auto border-4 border-secondary rounded-full" src="https://img.freepik.com/premium-photo/create-high-res-headshot-whitish-complexion-man-with-slightly-grown-beard_693425-24132.jpg?w=360"
       data-aos="fade-up"
       data-aos-duration="2000"
       />
@@ -30,10 +30,11 @@ import data from "../../data/current_track.json" assert { type: "json" };
           <span class="font-semi-bold">{artist.name}</span>
         ))}
       </p>
-        
         <img class="col-start-2  h-36 w-36"src={data.item.album.images[1].url}>
       </div>
-      
+    <div class="animate bounce-infiinite lg:row-start-3 lg:col-start-1 text-center lg:mt-16">
+      <a class="font-nbold animate-bounce-infinite" href="/henry_maher/henry_maher_cv.pdf"> Download my cv </a>
+    </div>
       <p
         class="text-base lg:col-start-2 lg:row-start-2  leading-relaxed"
         data-aos="fade-up"

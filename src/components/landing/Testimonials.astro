@@ -1,24 +1,9 @@
 ---
 // Define type for human opinions
-const pythonDescription: string  = `
-Sign up
-You said:hey can you write me some boiler plate description of work experience with python 
-ChatGPT said:
-ChatGPTSure! Here’s a boilerplate description you can use for work experience with Python:
-Python Developer
-
-[Company Name] – [Location]
-[Start Date] – [End Date]
-
-Developed and maintained scalable web applications using Python frameworks such as Django and Flask.
-Implemented RESTful APIs to facilitate communication between front-end and back-end systems.
-Collaborated with cross-functional teams to design, develop, and deploy data-driven solutions.
-Wrote reusable, testable, and efficient code, ensuring high performance and responsiveness of applications.
-Conducted code reviews and provided mentorship to junior developers to enhance coding standards and practices.
-Integrated third-party libraries and APIs to extend application functionality and improve user experience.
-Optimized database queries and improved application performance through data modeling and indexing strategies.
-Utilized version control systems (e.g., Git) for efficient collaboration and code management.
-`
+import { bigint } from "astro:schema";
+import {
+  sqlDescription, pythonDescription, javaScriptDescription, GCPDescription
+} from "../../data/skillsText.json.ts";
 
 enum skillLevel {
   BEGINNER = 1,
@@ -30,6 +15,7 @@ type Skill = {
   name: string;
   level: skillLevel;
   description: string;
+  yoe: number;
   style?: string;
 }
 
@@ -38,33 +24,38 @@ const baseSkills: Skill[] = [
   {
     name: "Python",
     level: skillLevel.EXPERT,
-    description: pythonDescription,
+    description: pythonDescription.text,
+    yoe: 8
   },
   {
     name: "SQL",
     level: skillLevel.EXPERT,
-    description: "Fast, scalable, and easy to use.",
+    description: sqlDescription.text,
+    yoe: 8
   },
   {
     name: "Javascript + Typescript",
     level: skillLevel.ADVANCED,
-    description: "Highly typed, and powerful.",
+    description: javaScriptDescription.text,
+    yoe: 5
   },
   {
     name: "Google Cloud Platform",
-    level: skillLevel.ADVANCED,
-    description: "Highly typed, and powerful.",
-
+    level: skillLevel.EXPERT,
+    description: GCPDescription.text,
+    yoe: 5
   },
   {
     name: "AWS",
-    level: skillLevel.INTERMEDIATE,
+    level: skillLevel.ADVANCED,
     description: "Highly typed, and powerful.",
+    yoe: 4
   },
   {
-    name: "React",
+    name: "Front End Frameworks",
     level: skillLevel.INTERMEDIATE,
     description: "Highly typed, and powerful.",
+    yoe: 4
   },
 ]
 
@@ -74,6 +65,7 @@ const skills : Skill[] = baseSkills.map((skill) => {
     level: skill.level,
     description: skill.description,
     style: `col-span-${skill.level}  bg-secondary rounded-full h-4`,
+    yoe: skill.yoe
   }
 })
 ---
@@ -90,7 +82,7 @@ const skills : Skill[] = baseSkills.map((skill) => {
     
     <div class="grid flex overflow-scroll grid-cols-1 text-secondary gap-6 pt-2 mt-2">
       {
-        skills.map((skill) => (
+        skills.sort((a,b) =>  b.level - a.level).map((skill) => (
           <div class={`group hover:border-b-2 hover:border-t-2 hover:border-secondary `} data-aos="fade-up" data-aos-duration="2000">
             <p class=" italic text-2xl block font-bold">
               {skill.name}
@@ -99,10 +91,9 @@ const skills : Skill[] = baseSkills.map((skill) => {
                 <div class=" grid grid-cols-4 col-span-2">
                   <span class={skill.style}></span>
                 </div>                  
-                <div class=" lg:col-span-4 text-left absolute group-hover:relative transition duration-500 group-hover:ease-in opacity-0 group-hover:opacity-100 opacity-0 ">              
+                <div class="col-span-4 select-none text-left absolute group-hover:relative transition duration-1000  opacity-0 group-hover:opacity-100 opacity-0 ">              
+                  <p> {skill.yoe} Years of Experience </p>
                   <p>{skill.description}</p>
-                  <p> years of exerience </p>
-                  <p> level {skill.level} </p>
                 </div>
             </div>
          </div>
