@@ -1,18 +1,52 @@
 ---
+import data from "../../data/top_tracks.json" assert { type: "json" };
 ---
 <section class="bg-spotify-dark">
-    <div class="space-y-2">
-        <!-- Section Title and Decorative Elements -->
-        <div
+    <div class="space-y-2">        
+      <div
           class="h-0.5 bg-spotify-dark"
           data-aos="fade-up"
           data-aos-duration="1000"
         >
         </div>
     <div class="bg-spotify-dark px-8 2xl:max-w-7xl py-6">
-    <h1 class="text-spotify text-base font-small"> what i'm listening to </h1>
-    <ul>
+    <h1 class="text-spotify text-base font-bold p-6"> Top Tracks </h1>
+    <div id="embed-iframe"></div>
+    <div>
+    
+    <ul class="tracks lg:grid p-3 lg:grid-cols-2 overflow-y-auto max-h-96">
+      {data.items.map(track => (
+        <button class="track truncate rounded" data-spotify-id={track.uri}>
+        <li class="lg:grid p-5 rounded-3xl hover:bg-spotify/20" data-spotify-id={track.id}>
+          <img class="w-24 h-24" src={track.album.images[0].url} />
+          <p class="text-spotify text-left lg:block hidden lg:col-start-2 text-sm font-semibold">{track.artists[0].name} <br> {track.name}</p>
+        </li>
+      </button>
+      ))}
     </ul>
-</div>
+  </div>
+  <div>
+    <p class="text-spotify text-left col-start-2 text-sm text-semi-bold font-semibold">HELLLOO</p>
+  </div>
+</div> 
+<script>
+  setTimeout(() => {
+window.onSpotifyIframeApiReady = (IFrameAPI) => {
 
+  const element = document.getElementById('embed-iframe');
+  const options = {
+    uri: 'spotify:track:6zjSct3GalQsgyDIYeQ28f',
+    };
+  const callback = (EmbedController) => {
+    document.querySelectorAll('.track').forEach(
+    track => {
+      track.addEventListener('click', () => {
+       EmbedController.loadUri(track.dataset.spotifyId)
+      });
+    })
+  };
+  IFrameAPI.createController(element, options, callback);
+}
+});
+</script>
 </section>
