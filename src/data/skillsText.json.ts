@@ -3,52 +3,57 @@ export interface SkillText {
 }
 
 export const pythonDescription: SkillText  = 
-{text: `Sign up
-You said:hey can you write me some boiler plate description of work experience with python 
-ChatGPT said:
-ChatGPTSure! Here’s a boilerplate description you can use for work experience with Python:
-Python Developer
+{text: `I have been working commerically with Python since I began developing in 2013. It's ease of use and huge amount
+    of support of Data Science and General analytics make it a great tool for working out initial ideas, all the way to
+    full on production code.
+    
+    I have worked with Python building web applications (using Django and Flask) as well as for Data Pipelines
+    using Pyspark and Airflow.
 
-[Company Name] – [Location]
-[Start Date] – [End Date]
+    Moreover 
 
-Developed and maintained scalable web applications using Python frameworks such as Django and Flask.
-Implemented RESTful APIs to facilitate communication between front-end and back-end systems.
-Collaborated with cross-functional teams to design, develop, and deploy data-driven solutions.
-Wrote reusable, testable, and efficient code, ensuring high performance and responsiveness of applications.
-Conducted code reviews and provided mentorship to junior developers to enhance coding standards and practices.
-Integrated third-party libraries and APIs to extend application functionality and improve user experience.
-Optimized database queries and improved application performance through data modeling and indexing strategies.
-Utilized version control systems (e.g., Git) for efficient collaboration and code management.
+    Python's greatest attribute by far is it's versatility and accessibility. 
 `
 };
 
 export const sqlDescription: SkillText  = {
-    text: `Sign up
-    You said:hey can you write me some boiler plate description of work experience with sql 
-    ChatGPT said:
-    ChatGPTSure! Here’s a boilerplate description you can use for work experience with SQL:
-    SQL Developer
-    ChatGPTSure! Here’s a boilerplate description you can use for work experience with SQL:
-    SQL DeveloperChatGPTSure! Here’s a boilerplate description you can use for work experience with SQL:
-    SQL DeveloperChatGPTSure! Here’s a boilerplate description you can use for work experience with SQL:
-    SQL DeveloperChatGPTSure! Here’s a boilerplate description you can use for work experience with SQL:
-    SQL DeveloperChatGPTSure! Here’s a boilerplate description you can use for work experience with SQL:
-    SQL Developer
+    text: ` An essential tool for any Developer. I have been working with various SQL syntaxes since the start of my
+    career. I have worked with both Relational and Non Relational Databases. One database does not fit all use cases
+    and so knowning when to apply them is crucial.
+
+    Most recently I was managing the Guardian Data Platform, which used Bigquery as both a Data Warehouse and
+    Data Lake.
+
+    In previous commercial setting I have managed Postgres instances on AWS to as part of a financial instituation
+    where ACID transformations were essential to ensuring consistency for business processes. 
     `
 }
 
 export const javaScriptDescription: SkillText  = {
-    text: `I have worked with JavaScript but have really been compelled by the recent additions to the language and improvements
-    in a range of front-end frameworks and developement tools
-    in a range of front-end frameworks and developement toolsin a range of front-end frameworks and developement tools
-    in a range of front-end frameworks and developement tools
-    in a range of front-end frameworks and developement tools
-    in a range of front-end frameworks and developement tools
-    in a range of front-end frameworks and developement tools
+    text: `There has been a lot of intersting changes to the Javascript landscape over the last several years.
+    The ease of creating great UIs with the help of any number CSS and Component frameworks mean that is easier than
+    ever to build scalable applications that are both fast and easier to manage.
+
+    Moreover, with the type safety of Typescript, debugging your code is so much better than it ever has been.
+
     `
 }
 
 export const GCPDescription: SkillText  = {
-    text: `I have worked with the Google Cloud Platform most of my developer career. `
+    text: `Google Cloud Platform is a leading platform for the bleeding edge of data needs. My most recent commercial projects have all been GCP focused
+    namely due to the amount of Data functionality offered by the platform.
+
+    Managed composer services are ideal for standard batch ingestion pipelines.
+
+    BigQuery offers a massive range of built in functionality to handle all types of data. Especially for geospatial analysis and using their out of the box
+    Models as a service.
+    `
+}
+
+export const FrontEndFrameworks: SkillText  = {
+    text: ``
+}
+
+export const CompiledLanguagesDesrciption: SkillText  = {
+    text: ``
 }

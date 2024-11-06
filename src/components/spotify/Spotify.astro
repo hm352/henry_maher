@@ -21,7 +21,7 @@ import data from "../../data/spotify/top_tracks.json" assert { type: "json" };
         <button class="track truncate rounded" data-spotify-id={track.uri}>
         <li class="lg:grid p-5 rounded-3xl hover:bg-spotify/20" data-spotify-id={track.id}>
           <img class="lg:w-24 lg:h-24 w-16 h-16" src={track.album.images[0].url} />
-          <p class="text-spotify text-left lg:block hidden lg:col-start-2 text-sm font-semibold">{track.artists[0].name} <br> {track.name}</p>
+          <p class="text-spotify text-left  lg:block hidden lg:col-start-2 text-sm font-semibold">{track.artists[0].name} <br> {track.name}</p>
         </li>
       </button>
       ))}
