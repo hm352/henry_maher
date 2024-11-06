@@ -1,8 +1,10 @@
 ---
-import data from "../../data/top_tracks.json" assert { type: "json" };
+import data from "../../data/spotify/top_tracks.json" assert { type: "json" };
 ---
 <section class="bg-spotify-dark">
-    <div class="space-y-2">        
+  <div class="px-8 2xl:max-w-7xl mx-auto py-6">
+    <div class="mt-6 space-y-2">  
+  <div class="space-y-2">        
       <div
           class="h-0.5 bg-spotify-dark"
           data-aos="fade-up"
@@ -49,4 +51,6 @@ window.onSpotifyIframeApiReady = (IFrameAPI) => {
 }
 });
 </script>
+  </div>
+  </div>
 </section>

@@ -16,71 +16,74 @@ import data from "../../data/current_track.json" assert { type: "json" };
     </h3>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-3 text-secondary mx-auto my-auto gap-6">
-      <img class="lg:col-start-2 my-auto mx-auto border-4 border-secondary rounded-full" src="https://img.freepik.com/premium-photo/create-high-res-headshot-whitish-complexion-man-with-slightly-grown-beard_693425-24132.jpg?w=360"
+      <img class="lg:col-start-2 my-auto mx-auto border-4 lg:w-64 border-secondary rounded-full" 
+      src="https://media.licdn.com/dms/image/v2/C4D03AQF45Js8icOJ0w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1570628862405?e=1736380800&v=beta&t=yPevhVkVJ3Zy0gIK_LeQifMlkm5g4Hf2OPDcElfzik4"
       data-aos="fade-up"
       data-aos-duration="2000"
       />
       <div class="grid grid-cols-2 lg:col-start-1 justify-self-center"
       data-aos="fade-up"
       data-aos-duration="2000">
-      <p>
-         <span class="font-bold">{data.item.name}</span>
-        {data.item.artists.map( artist => (
-          <br></br>
-          <span class="font-semi-bold">{artist.name}</span>
-        ))}
-      </p>
-        <img class="col-start-2  h-36 w-36"src={data.item.album.images[1].url}>
       </div>
-    <div class="animate bounce-infiinite lg:row-start-3 lg:col-start-1 text-center lg:mt-16">
-      <a class="font-nbold animate animate-bounce-infinite" href="/henry_maher/henry_maher_cv.pdf"> Download my cv </a>
-    </div>
+
       <p
-        class="text-base lg:col-start-2 lg:row-start-2  leading-relaxed"
+        class="text-base lg:col-start-1 lg:row-start-2  leading-relaxed"
         data-aos="fade-up"
         data-aos-duration="2000"
       >
         I'm a self-taught full stack engineer with Big Data Experience. I love 
         bringing ideas to life with code and owning products end to end. 
         
-        I have worked across start ups and larger organizations. I love developing solutions that push towards and greater good
+        I have worked across start ups and larger organizations. I love developing solutions that benefit society
         especially projects in the emerging Green Tech Space
 
-        <!-- I'm a self-taught front-end designer and developer who enjoys creating
-        modern designs with Tailwind CSS. I have customers worldwide and have
-        had successful projects. Recently, two of my projects were acquired, and
-        I'm currently working on Lexington Themes. I also curate Colors &amp;
-        Fonts and create VS Code Themes.  -->
       </p>
       <p
-        class="text-base lg:col-start-2 lg:row-start-3 leading-relaxed "
+        class="text-base lg:row-start-3 leading-relaxed "
         data-aos="fade-up"
         data-aos-duration="2500"
       >
-        I am currently available for Enquires. If you need a landing page, data pipeline
-        or just want to ideate on new products, do not hesitate to get in
-        contact.
+      This site is currently written using Astro, Typescript, Tailwind CSS and uses Python for backed Data Processes in the background.
       </p>
-      <p class="text-base underline underline-offset-4 lg:row-start-4 lg:col-start-2"><a href="mailto:henry.maher99@gmail.com">Email me here!</a></p>
       <p
-        class="text-base un lg:col-start-3 lg:row-start-2 leading-relaxed"
+        class="text-base un lg:col-start-2 lg:row-start-2 "
         data-aos="fade-up"
         data-aos-duration="2500"
       >
-        As a solo developer, I offer a unique and personalized approach to
-        design and build exclusively and responsive landing pages using Astro
-        and Tailwind CSS.
+        This site is currently written using Astro, Typescript, Tailwind CSS and uses Python for backed Data Processes in the background.
+        This enables this site to be rendered and served as a static webpage without there being any need to provision a Database or Server management.
+        All Data processes are run locally and then pushed to GitHub to be built. 
+
       </p>
       <p
-        class="text-base lg:col-start-3 lg:row-start-3 leading-relaxed"
+        class="text-base lg:col-start-2 lg:row-start-3 "
         data-aos="fade-up"
         data-aos-duration="3000"
       >
-        My singular focus on your project ensures efficient and effective
-        results, delivering a stunning website tailored to your specific
-        business needs and goals. Trust on my expertise allows to craft anything
-        that will help you stand out and convert visitors into customers.
+      Deployed using GitHub actions mean that I can automatically deploy this site whenever the underlying data changes. Using a standard workflow,
+      the only limiting factor for deploying this is the free amount of build minutes per month on GitHub.
       </p>
+      <p
+      class="text-base lg:col-start-3 lg:row-start-2 "
+      data-aos="fade-up"
+      data-aos-duration="3000"
+    >
+      I am passionate about building projects that can stand the test of time and use best practices improving productivity and 
+      enabling innovation for the future.
+    </p>
+    <p
+    class="text-base lg:col-start-3 lg:row-start-3 "
+    data-aos="fade-up"
+    data-aos-duration="3000"
+  >
+  I am currently available for Enquires. If you need a landing page, data pipeline
+  or just want to ideate on new products, do not hesitate to get in
+  contact.
+  </p>
+          <div class="grid pt-4 grid-cols-2 lg:col-span-3 text-center lg:mt-16 justify-items-center">
+      <a class="font-bold rounded-full w-56 hover:bg-secondary/10" href="/henry_maher/henry_maher_cv.pdf"> Download my cv </a>
+      <a class="font-bold rounded-full w-56 hover:bg-secondary/10" href="mailto:henry.maher99@gmail.com"> Get In Touch </a>
+    </div>
     </div>
   </div>
   </div>

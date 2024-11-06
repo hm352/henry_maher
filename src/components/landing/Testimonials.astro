@@ -57,6 +57,12 @@ const baseSkills: Skill[] = [
     description: "Highly typed, and powerful.",
     yoe: 4
   },
+  {
+    name: "Compiled Langauges",
+    level: skillLevel.INTERMEDIATE,
+    description: "Highly typed, and powerful.",
+    yoe: 4
+  },
 ]
 
 const skills : Skill[] = baseSkills.map((skill) => {
@@ -89,8 +95,8 @@ const skills : Skill[] = baseSkills.map((skill) => {
             </p>
             <div class="grid grid-cols-4">
                 <div class=" grid grid-cols-4 col-span-2">
-                  <span class={skill.style}></span>
-                </div>                  
+                  <div class={skill.style}></div>
+                </div> 
                 <div class="col-span-4 select-none text-left absolute group-hover:relative transition duration-1000  opacity-0 group-hover:opacity-100 opacity-0 ">              
                   <p> {skill.yoe} Years of Experience </p>
                   <p>{skill.description}</p>
